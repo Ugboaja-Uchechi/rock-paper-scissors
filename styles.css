@@ -47,13 +47,13 @@ main {
   font-weight: 700;
 }
 
-.text {
+/* .text {
   color: #fff;
   font-size: calc(.75rem + 1vw);
   line-height: 1.2;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 700;
-}
+} */
 
 .rules-cover {
   position: absolute;
@@ -78,4 +78,35 @@ main {
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 600;
   letter-spacing: 0.25em;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 2rem;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.paper {
+  top: 0;
+  left: 0;
+}
+
+.scissors {
+  top: 0;
+  right: 0;
+}
+
+.rock {
+  bottom: 0;
+  left: 42%;
+  right: 42%;
 }
