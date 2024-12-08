@@ -1,30 +1,34 @@
 
+// if the score was inside the function the function would create a new score eachtime
 
+const scores = JSON.parse(localStorage.getItem('scores')) || {
+  score: 0,
+};
 
 
 const playerPick = (value) => {
   let result = '';
-  let score = 0;
+
 
   setTimeout(() => {
     const computer = computerPick();
     if (value === "paper") {
       if (computer === "rock") {
         result = "You win";
-        score = score + 1;
+
       } else if (computer === "paper") {
         result = "Tie";
       } else if (computer === "scissors") {
         result = "You lose";
-        score = score - 1;
+
       }
     } else if (value === "scissors") {
       if (computer === "rock") {
         result = "You lose";
-        score = score - 1;
+
       } else if (computer === "paper") {
         result = "You win";
-        score = score + 1;
+
       } else if (computer === "scissors") {
         result = "Tie";
       }
@@ -33,15 +37,23 @@ const playerPick = (value) => {
         result = "Tie";
       } else if (computer === "paper") {
         result = "You lose";
-        score = score - 1;
+
       } else if (computer === "scissors") {
         result = "You win";
-        score = score + 1;
+
       }
     }
+
+    if (result === "You win") {
+      scores.score = scores.score + 1;
+    } else if (result === "You lose") {
+      scores.score -= 1;
+    }
+
+    localStorage.setItem('scores', JSON.stringify(scores));
     document.querySelector('.result').innerHTML = result;
 
-    document.querySelector('.score').innerHTML = score;
+    document.querySelector('.score').innerHTML = scores.score;
 
   }, 1000);
 
@@ -51,7 +63,7 @@ const playerPick = (value) => {
 
   document.querySelector('.player-choice').innerHTML = value;
 };
-
+document.querySelector('.score').innerHTML = scores.score;
 const computerPick = () => {
   const randomValue = Math.random();
 

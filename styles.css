@@ -17,7 +17,7 @@ main {
 
   padding-inline: calc(.5rem + 1vw);
   padding-block: 1rem;
-  width: calc(13rem + 26vw);
+  width: calc(15rem + 30vw);
   border: 3px solid rgba(255, 255, 255, 0.11);
   border-radius: 5px;
   margin-inline: auto;
@@ -42,7 +42,7 @@ main {
 
 .score {
   color: hsl(229, 25%, 31%);
-  font-size: calc(.75rem + 1vw);
+  font-size: calc(.75rem + 1.5vw);
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 700;
 }
@@ -89,6 +89,8 @@ main {
 
 .relative {
   position: relative;
+  transform: scale(1.25);
+  margin-block-start: 4rem;
 }
 
 .absolute {
@@ -96,17 +98,54 @@ main {
 }
 
 .paper {
-  top: 0;
-  left: 0;
+  top: -25px;
+  left: -25px;
+  background-color: #fff;
+  max-width: 300px;
+  width: 7rem;
+  height: 40%;
+  border: 10px solid hsl(230, 89%, 65%);
+  border-radius: 50%;
+  box-shadow: inset 0 4px 3px -1px rgba(128, 128, 128, 0.767), 1px 8px hsl(230, 89%, 62%);
 }
 
 .scissors {
-  top: 0;
-  right: 0;
+  top: -25px;
+  right: -25px;
+  background-color: #fff;
+  max-width: 300px;
+  width: 7rem;
+  height: 40%;
+  border: 10px solid hsl(40, 84%, 53%);
+  box-shadow: inset 0 4px 3px -1px rgba(128, 128, 128, 0.767), 1px 8px hsl(39, 89%, 49%);
+  border-radius: 50%;
 }
 
 .rock {
-  bottom: 0;
-  left: 42%;
-  right: 42%;
+  bottom: -5px;
+  left: 33%;
+  background-color: #fff;
+  max-width: 300px;
+  width: 7rem;
+  height: 40%;
+  border: 10px solid hsl(349, 71%, 56%);
+  box-shadow: inset 0 4px 3px -1px rgba(128, 128, 128, 0.767), 1px 8px hsl(349, 71%, 52%);
+  border-radius: 50%;
+}
+
+.scissors:hover,
+.rock:hover,
+.paper:hover {
+  background-color: rgb(206, 201, 201);
+  transition: background-color .3s ease-in;
+  cursor: pointer;
+}
+
+.absolute img {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-block-start: 1rem;
 }
