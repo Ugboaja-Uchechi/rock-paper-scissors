@@ -73,11 +73,12 @@ main {
   transition: background-color .6s ease-in, color .6s ease-in;
 }
 
-.rules-cover p {
+.rules-text {
   font-size: 1rem;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 600;
   letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
 .center {
@@ -148,4 +149,8 @@ main {
   justify-content: center;
   text-align: center;
   margin-block-start: 1rem;
+}
+
+.rules-modal {
+  display: none;
 }

@@ -5,6 +5,10 @@ const scores = JSON.parse(localStorage.getItem('scores')) || {
   score: 0,
 };
 
+  const rulesCover = document.querySelector('.rules-cover');
+  const rulesModal = document.querySelector('.rules-modal');
+  const closeContainer = document.querySelector('.close-container');
+
 
 const playerPick = (value) => {
   let result = '';
@@ -63,7 +67,9 @@ const playerPick = (value) => {
 
   document.querySelector('.player-choice').innerHTML = value;
 };
+
 document.querySelector('.score').innerHTML = scores.score;
+
 const computerPick = () => {
   const randomValue = Math.random();
 
@@ -80,3 +86,19 @@ const computerPick = () => {
   document.querySelector('.computer-choice').innerHTML = computerChoice;
   return computerChoice;
 }
+
+const showRulesModal = () => {
+
+  if (rulesCover.click) {
+    rulesModal.style.display = 'block';
+  } 
+
+};
+
+const hideRulesModal = () => {
+
+  if (closeContainer.click) {
+    rulesModal.style.display = 'none';
+  }
+  
+};

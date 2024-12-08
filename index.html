@@ -58,11 +58,31 @@
       <p class="result">Result</p>
     </div>
 
-    <div class="rules-cover">
-      <p>Rules</p>
+    <div class="rules-cover" onclick="showRulesModal()">
+      <p class="rules-text">Rules</p>
     </div>
 
+    <section class="rules-modal">
+      <div>
+        <div>
+          <p class="rules-text">Rules</p>
+        </div>
+
+        <div class="close-container" onclick="hideRulesModal()">
+          <p>close</p>
+        </div>
+      </div>
+
+      <div>
+        <img src="./images/image-rules.svg" alt="">
+      </div>
+
+    </section>
   </main>
+
+  <!-- rules modal  -->
+
+
 </body>
 
 </html>
