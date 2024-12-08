@@ -90,7 +90,7 @@ const computerPick = () => {
 const showRulesModal = () => {
 
   if (rulesCover.click) {
-    rulesModal.style.display = 'block';
+    rulesModal.style.display = 'flex';
   } 
 
 };
@@ -100,5 +100,5 @@ const hideRulesModal = () => {
   if (closeContainer.click) {
     rulesModal.style.display = 'none';
   }
-  
+
 };

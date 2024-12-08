@@ -73,7 +73,7 @@ main {
   transition: background-color .6s ease-in, color .6s ease-in;
 }
 
-.rules-text {
+.rules-cover p {
   font-size: 1rem;
   font-family: "Barlow Semi Condensed", sans-serif;
   font-weight: 600;
@@ -153,4 +153,38 @@ main {
 
 .rules-modal {
   display: none;
+  position: absolute;
+
+  position: absolute;
+  top: 25%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bg-white {
+  background-color: #fff;
+  padding-inline: calc(.5rem + 1.5vw);
+  padding-block: 1rem;
+  border-radius: 8px;
+}
+
+.modal-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-end: 2rem;
+}
+
+.rules-text {
+  font-size: 1.5rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: hsl(229, 25%, 31%);
+}
+
+.close-container > img {
+  cursor: pointer;
 }

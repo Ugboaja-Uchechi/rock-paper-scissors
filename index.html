@@ -59,23 +59,27 @@
     </div>
 
     <div class="rules-cover" onclick="showRulesModal()">
-      <p class="rules-text">Rules</p>
+      <p>Rules</p>
     </div>
 
     <section class="rules-modal">
-      <div>
+      <div class="bg-white">
+        <div class="modal-flex">
+          <div>
+            <p class="rules-text">Rules</p>
+          </div>
+
+          <div class="close-container" onclick="hideRulesModal()">
+            <img src="./images/icon-close.svg" alt="">
+          </div>
+        </div>
+
         <div>
-          <p class="rules-text">Rules</p>
-        </div>
-
-        <div class="close-container" onclick="hideRulesModal()">
-          <p>close</p>
+          <img src="./images/image-rules.svg" alt="">
         </div>
       </div>
 
-      <div>
-        <img src="./images/image-rules.svg" alt="">
-      </div>
+
 
     </section>
   </main>
