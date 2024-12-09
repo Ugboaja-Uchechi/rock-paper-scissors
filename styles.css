@@ -153,10 +153,14 @@ main {
 
 .rules-modal {
   display: none;
-  position: absolute;
+  position: fixed;
+  background-color: hsla(238, 48%, 15%, 0.699);
 
-  position: absolute;
-  top: 25%;
+  inset: 0;
+  z-index: 3;
+
+  /* position: absolute;
+  top: 25%; */
   width: 100%;
   justify-content: center;
   align-items: center;
