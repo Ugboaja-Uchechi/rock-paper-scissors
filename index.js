@@ -19,7 +19,7 @@ const playerPick = (value) => {
 
   playerImg.src = `./images/icon-${value}.svg`;
   playerImg.alt = value;
-  playerImg.className =`${value} object pulse`;
+  playerImg.className =`${value} object`;
 
   setTimeout(() => {
     const computer = computerPick();
@@ -57,8 +57,13 @@ const playerPick = (value) => {
 
     if (result === "You win") {
       scores.score = scores.score + 1;
+      playerImg.classList.add('pulse');
     } else if (result === "You lose") {
       scores.score -= 1;
+      computerImg.classList.add('pulse');
+    } else if (result === "Tie") {
+      computerImg.classList.add('pulse');
+      playerImg.classList.add('pulse');
     }
 
     if (result !== "") {
@@ -97,7 +102,7 @@ const computerPick = () => {
 
   computerImg.src = `./images/icon-${computerChoice}.svg`;
   computerImg.alt = computerChoice;
-  computerImg.className = `${computerChoice} object pulse`;
+  computerImg.className = `${computerChoice} object`;
 
   return computerChoice;
 }
