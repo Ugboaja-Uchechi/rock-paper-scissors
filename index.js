@@ -9,10 +9,17 @@ const scores = JSON.parse(localStorage.getItem('scores')) || {
   const rulesModal = document.querySelector('.rules-modal');
   const closeContainer = document.querySelector('.close-container');
 
+  // let playerChoice = document.querySelector('.player-choice');
+  let playerImg = document.querySelector('.player-choice');
+  let computerImg = document.querySelector('.computer-choice');
 
 const playerPick = (value) => {
   let result = '';
 
+
+  playerImg.src = `./images/icon-${value}.svg`;
+  playerImg.alt = value;
+  playerImg.className = value;
 
   setTimeout(() => {
     const computer = computerPick();
@@ -61,11 +68,6 @@ const playerPick = (value) => {
 
   }, 1000);
 
-
-
-
-
-  document.querySelector('.player-choice').innerHTML = value;
 };
 
 document.querySelector('.score').innerHTML = scores.score;
@@ -83,7 +85,10 @@ const computerPick = () => {
     computerChoice = 'scissors';
   }
 
-  document.querySelector('.computer-choice').innerHTML = computerChoice;
+  computerImg.src = `./images/icon-${computerChoice}.svg`;
+  computerImg.alt = computerChoice;
+  computerImg.className = computerChoice;
+
   return computerChoice;
 }
 
@@ -102,3 +107,46 @@ const hideRulesModal = () => {
   }
 
 };
+
+
+
+// const random = document.querySelector('.random');
+
+// let randomNumber = 0;
+
+// const generateRandomNumber = () => {
+//   while(randomNumber < 0.5) {
+//   randomNumber = Math.random();
+
+// }
+//   random.innerHTML = randomNumber;
+//     console.log(randomNumber)
+// }
+
+
+// Accumulator Pattern (basically adds)
+
+// let nums = [2, 4, 5];
+// let total = 0;
+
+// shortcut
+// index < nums.length
+
+// for (let index = 0; index <= nums.length - 1; index++) {
+//   const num = nums[index];
+
+//   total += num
+// }
+
+// console.log(total);
+
+// let numsDoubled = [];
+
+// for (let index = 0; index < nums.length; index++) {
+//   const num = nums[index];
+
+//   numsDoubled.push(num * 2)
+// }
+
+// console.log(numsDoubled)
+

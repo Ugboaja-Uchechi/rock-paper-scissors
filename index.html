@@ -14,6 +14,9 @@
 <script src="./index.js" defer></script>
 
 <body>
+
+  <!-- <p class="random">hell</p>
+  <button onclick="generateRandomNumber()">Get Number</button> -->
   <main>
     <div class="cover">
       <div>
@@ -42,25 +45,33 @@
 
     </div>
 
-    <div>
-      <p>
-        You picked <span class="player-choice"></span>
-      </p>
-    </div>
+    <section>
+      <div>
+        <p>
+          You picked
+        </p>
+        <img src="" class="player-choice" alt="">
+      </div>
 
-    <div>
-      <p>
-        The house picked <span class="computer-choice"></span>
-      </p>
-    </div>
+      <div>
+        <p>
+          The house picked
+        </p>
+        <img src="" class="computer-choice" alt="">
+      </div>
 
-    <div>
-      <p class="result">Result</p>
-    </div>
+      <div>
+        <p class="result">Result</p>
+      </div>
+    </section>
+
+
 
     <div class="rules-cover" onclick="showRulesModal()">
       <p>Rules</p>
     </div>
+
+    <!-- rules modal  -->
 
     <section class="rules-modal" onclick="hideRulesModal()">
       <div class="bg-white">
@@ -82,10 +93,8 @@
 
 
     </section>
+
   </main>
-
-  <!-- rules modal  -->
-
 
 </body>
 
