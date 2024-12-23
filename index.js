@@ -5,21 +5,21 @@ const scores = JSON.parse(localStorage.getItem('scores')) || {
   score: 0,
 };
 
-  const rulesCover = document.querySelector('.rules-cover');
-  const rulesModal = document.querySelector('.rules-modal');
-  const closeContainer = document.querySelector('.close-container');
-
-  // let playerChoice = document.querySelector('.player-choice');
-  let playerImg = document.querySelector('.player-choice');
-  let computerImg = document.querySelector('.computer-choice');
+const rulesCover = document.querySelector('.rules-cover');
+const rulesModal = document.querySelector('.rules-modal');
+const closeContainer = document.querySelector('.close-container');
+let playSection = document.querySelector('.center');
+let playerImg = document.querySelector('.player-choice');
+let computerImg = document.querySelector('.computer-choice');
+let resultSection = document.querySelector('.js-result-section');
+let playBtn = document.querySelector('.js-play');
 
 const playerPick = (value) => {
   let result = '';
 
-
   playerImg.src = `./images/icon-${value}.svg`;
   playerImg.alt = value;
-  playerImg.className = value;
+  playerImg.className =`${value} object pulse`;
 
   setTimeout(() => {
     const computer = computerPick();
@@ -61,6 +61,11 @@ const playerPick = (value) => {
       scores.score -= 1;
     }
 
+    if (result !== "") {
+      resultSection.style.display = 'flex';
+      playSection.style.display = 'none';
+    } 
+
     localStorage.setItem('scores', JSON.stringify(scores));
     document.querySelector('.result').innerHTML = result;
 
@@ -71,6 +76,11 @@ const playerPick = (value) => {
 };
 
 document.querySelector('.score').innerHTML = scores.score;
+
+playBtn.addEventListener('click', () => {
+  resultSection.style.display = 'none';
+  playSection.style.display = 'flex';
+})
 
 const computerPick = () => {
   const randomValue = Math.random();
@@ -87,7 +97,7 @@ const computerPick = () => {
 
   computerImg.src = `./images/icon-${computerChoice}.svg`;
   computerImg.alt = computerChoice;
-  computerImg.className = computerChoice;
+  computerImg.className = `${computerChoice} object pulse`;
 
   return computerChoice;
 }
@@ -96,7 +106,7 @@ const showRulesModal = () => {
 
   if (rulesCover.click) {
     rulesModal.style.display = 'flex';
-  } 
+  }
 
 };
 
@@ -107,8 +117,6 @@ const hideRulesModal = () => {
   }
 
 };
-
-
 
 // const random = document.querySelector('.random');
 
