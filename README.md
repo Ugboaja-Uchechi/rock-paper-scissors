@@ -15,7 +15,7 @@ Users should be able to:
 
 ## Live Link
 
-[Live Link](https://allcountry.vercel.app/)
+[Live Link](https://rps-play.vercel.app/)
 
 ## Screenshots
 
